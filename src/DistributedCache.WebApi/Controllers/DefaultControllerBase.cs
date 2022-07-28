@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DistributedCache.WebApi.Models.Responses;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DistributedCache.WebApi.Controllers
 {
@@ -21,7 +22,7 @@ namespace DistributedCache.WebApi.Controllers
             {
                 _logger.LogError(ex, "An error occurred while processing the request. Try again later.");
 
-                return StatusCode(500, new { message = "An error occurred while processing the request. Try again later." });
+                return StatusCode(500, new BaseResponse { Message = "An error occurred while processing the request. Try again later." });
             }
         }
     }
